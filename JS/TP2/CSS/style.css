@@ -1,0 +1,49 @@
+div#container {
+    background-image: url(https://joueclub-joueclub-fr-storage.omn.proximis.com/Imagestorage/images/0/400/5e1da54fdaa46_la_route_66_et_son_role_dans_le_premier_film_cars.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width:840px;
+
+}
+/* La totalité des cellules */
+div.board{
+    display: flex;
+    width:800px;
+    height:600px;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    margin : 20px
+}
+.titre{
+    text-align: center;
+    font-size: 40px;
+    color: brown;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+img{
+    border-radius:5px;
+}
+
+div.board img{
+    visibility: hidden;
+}
+
+/* chacune des cellules */
+div.board div.cellule{
+    width: 160px;
+    height:130px;
+    border:3px solid rgb(191, 191, 191);
+    border-radius:8px;
+    background-color:rgba(255, 0, 0, 0.792);
+    cursor:pointer;
+
+    /* image au dos */
+    background-image: url(http://assets.stickpng.com/thumbs/59db69be3752880e93e16efa.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
