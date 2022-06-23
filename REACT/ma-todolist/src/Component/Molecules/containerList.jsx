@@ -12,7 +12,7 @@ const ContainerList = () => {
 
   const HandleClick = (e) => {
     if(listValue) {
-      setList(prevState => [...prevState, {id: Math.floor(Math.random()*1000) , value: lists}]);
+      setList(prevState => [...prevState, listValue]);
       setListValue("");
     }
   } 
@@ -34,7 +34,7 @@ const ContainerList = () => {
           .map(list =>
           <div key={list} style={{border:"2px solid red",borderRadius:"5%", marginBottom:"10px",width:"250px"}}>
             {list}
-            <List title={list.value}/>
+            <List/>
           </div>
          )}
 
