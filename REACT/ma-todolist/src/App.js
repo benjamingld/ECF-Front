@@ -1,11 +1,11 @@
 
 import './App.css';
-import Container from './Component/Molecules/container'
+import ContainerList from './Component/Molecules/containerList'
 
 function App() {
   return (
     <div className="App">
-      <Container/>
+      <ContainerList/>
     </div>
   );
 }
