@@ -5,7 +5,7 @@ const List = () => {
 
   const [todoValue,setTodoValue] = useState("");
   const [todos, setTodo] = useState([]);
-  console.log(todos)
+  console.log(todos);
 
   // {id: Math.floor(Math.random)*1000 , text: lists} au niveau de la listvalue dans le HandleClick.
 
@@ -22,8 +22,6 @@ const List = () => {
   }
 
   return (
-    <div style={{border:"2px solid green", margin:"20px"}}>
-
     <div>
 
       <form onSubmit={preventDefault}>
@@ -34,7 +32,7 @@ const List = () => {
       <>
         {todos
         .map(todo =>
-        <div key={todo} style={{border:"2px solid blue"}}>
+        <div key={todo} style={{display:"flex", justifyContent:"center"}}>
           {todo}
           <Todo/>
         </div>
@@ -42,9 +40,8 @@ const List = () => {
       </>
 
       <button>Supprimer</button>
+
     </div>
-    
-  </div>
   );
 }
   
