@@ -1,9 +1,10 @@
-const Todo = () => {
+const Todo = ({title}) => {
 
   return (
     <div className="Todo">
+      {title}
       <input type="checkbox"/>
-                  <button>Del</button>
+      <button>Del</button>
       
     </div>
   );

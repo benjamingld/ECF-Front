@@ -23,19 +23,22 @@ const ContainerList = () => {
 
     return (
       <div>
-
+      
         <form onSubmit={preventDefault}>
-          <input placeholder="Nom de la liste" value={listValue} onChange={(e) => setListValue(e.target.value)}/>
+          
+          <input 
+            placeholder="Nom de la liste" 
+            value={listValue} 
+            onChange={(e) => setListValue(e.target.value)}/>
+
           <button onClick={() => HandleClick()}>Ajouter</button>
         </form>
 
         <div style={{display:"flex", justifyContent:"center", flexWrap:"wrap"}}>
           {lists
-          .map(list =>
-          <div key={list} style={{border:"2px solid red",borderRadius:"5%", margin:"1%", width:"45%"}}>
-            
-                  <List/>
-          </div>
+          .map((list,index) =>
+          <List key={index} title={list.title}/>
+
          )}
 
         </div>

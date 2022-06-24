@@ -1,17 +1,15 @@
 import { useState } from 'react'
 import Todo from '../Todo/todo'
 
-const List = () => {
+const List = ({title}) => {
 
   const [todoValue,setTodoValue] = useState("");
   const [todos, setTodo] = useState([]);
   console.log(todos);
 
-  // {id: Math.floor(Math.random)*1000 , text: lists} au niveau de la listvalue dans le HandleClick.
-
   const HandleClick = (e) => {
     if (todoValue){
-      setTodo(prevState => [...prevState, todoValue]);
+      setTodo(prevState => [...prevState,{id:Math.floor(Math.random()*1000) , title: todoValue}]);
       setTodoValue("");
     }
    
@@ -23,24 +21,24 @@ const List = () => {
 
   return (
     <div>
-
+      {title}
       <form onSubmit={preventDefault}>
-        <input placeholder="Ecrire la tâche" value={todoValue} onChange={(e) => setTodoValue(e.target.value)}/>
+        <input 
+          placeholder="Ecrire la tâche" 
+          value={todoValue} 
+          onChange={(e) => setTodoValue(e.target.value)}/>
+
         <button onClick={() => HandleClick()}>Add</button>
       </form>
 
       <>
         {todos
-        .map(todo =>
-        <div key={todo} style={{display:"flex", justifyContent:"center"}}>
-          <div style={{width:"60%"}}>{todo}</div>
-
-          <Todo/>
+        .map((todo,index) =>
+        <div >
+          <Todo key={index} title={todo.title} style={{display:"flex", justifyContent:"center"}}/>
         </div>
         )}
       </>
-
-      <button>Supprimer</button>
 
     </div>
   );
