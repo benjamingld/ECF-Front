@@ -16,7 +16,7 @@ const List = ({title}) => {
   } 
   
   const preventDefault = (e) => {
-     e.preventDefault();
+    e.preventDefault();
   }
 
   return (
