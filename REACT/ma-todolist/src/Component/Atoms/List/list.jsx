@@ -15,28 +15,23 @@ const List = ({title}) => {
    
   } 
   
-  const preventDefault = (e) => {
-    e.preventDefault();
-  }
+
 
   return (
     <div>
       {title}
-      <form onSubmit={preventDefault}>
         <input 
           placeholder="Ecrire la tâche" 
           value={todoValue} 
           onChange={(e) => setTodoValue(e.target.value)}/>
 
         <button onClick={() => HandleClick()}>Add</button>
-      </form>
+
 
       <>
         {todos
         .map((todo,index) =>
-        <div >
-          <Todo key={index} title={todo.title} style={{display:"flex", justifyContent:"center"}}/>
-        </div>
+          <Todo key={index} title={todo.title}/>
         )}
       </>
 

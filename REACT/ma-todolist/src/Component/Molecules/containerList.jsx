@@ -9,6 +9,11 @@ const ContainerList = () => {
 
   // {id: Math.floor(Math.random)*1000 , text: lists} au niveau de la listvalue dans le HandleClick.
 
+  //{(e) => setListValue(e.target.value)} equivaut a  {(e) => HandleChange(e)}
+//   const HandleChange = (e) => {
+//     setListValue(e.target.value)
+//   }
+
 
   const HandleClick = (e) => {
     if(listValue) {
@@ -16,31 +21,23 @@ const ContainerList = () => {
       setListValue("");
     }
   } 
-  
-  const preventDefault = (e) => {
-     e.preventDefault();
-  }
+
 
     return (
-      <div>
-      
-        <form onSubmit={preventDefault}>
-          
+      <div>   
           <input 
             placeholder="Nom de la liste" 
             value={listValue} 
             onChange={(e) => setListValue(e.target.value)}/>
 
           <button onClick={() => HandleClick()}>Ajouter</button>
-        </form>
 
-        <div style={{display:"flex", justifyContent:"center", flexWrap:"wrap"}}>
+        <div>
           {lists
           .map((list,index) =>
           <List key={index} title={list.title}/>
 
          )}
-
         </div>
       
     </div>
