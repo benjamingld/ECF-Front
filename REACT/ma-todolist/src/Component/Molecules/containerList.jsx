@@ -12,7 +12,7 @@ const ContainerList = () => {
 
   const HandleClick = (e) => {
     if(listValue) {
-      setList(prevState => [...prevState, listValue]);
+      setList(prevState => [...prevState, {id: Math.floor(Math.random()*1000) , title: listValue}]);
       setListValue("");
     }
   } 
@@ -22,19 +22,19 @@ const ContainerList = () => {
   }
 
     return (
-      <div style={{margin:"5%"}}>
+      <div>
 
         <form onSubmit={preventDefault}>
-          <input placeholder="Ecrire la liste" value={listValue} onChange={(e) => setListValue(e.target.value)}/>
-          <button onClick={() => HandleClick()}>AddList</button>
+          <input placeholder="Nom de la liste" value={listValue} onChange={(e) => setListValue(e.target.value)}/>
+          <button onClick={() => HandleClick()}>Ajouter</button>
         </form>
 
-        <div style={{display:"flex", justifyContent:"space-around", flexWrap:"wrap"}}>
+        <div style={{display:"flex", justifyContent:"center", flexWrap:"wrap"}}>
           {lists
           .map(list =>
-          <div key={list} style={{border:"2px solid red",borderRadius:"5%", marginBottom:"10px",width:"250px"}}>
-            {list}
-            <List/>
+          <div key={list} style={{border:"2px solid red",borderRadius:"5%", margin:"1%", width:"45%"}}>
+            
+                  <List/>
           </div>
          )}
 

@@ -3,7 +3,7 @@ const Todo = () => {
   return (
     <div className="Todo">
       <input type="checkbox"/>
-      <button>Delete</button>
+                  <button>Del</button>
       
     </div>
   );
