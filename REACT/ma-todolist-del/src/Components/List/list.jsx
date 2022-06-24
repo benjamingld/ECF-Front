@@ -37,6 +37,7 @@ const List = ({ title }) => {
                 title={todo.title}
             /> 
             )}
+            <button>Supprimer la liste</button>
            
         </div>
         

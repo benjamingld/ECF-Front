@@ -41,29 +41,3 @@ const List = ({title}) => {
   
   export default List;
 
-
-  // const Todo = ({ todo, todos, setTodos }) => {
-
-  //   function Delete(id) {
-    
-  //   setTodos(todos.filter((todo) => todo.id !==id));
-    
-  //   console.log(todo)
-    
-  //   }
-    
-  //   return (
-    
-  //   <p key={todo} style={{ border: "2px solid green", padding: "2px" }}>
-    
-  //             <input type="checkbox" /> {todo} <button onClick={()=> Delete(todo.id)}>x</button>
-    
-  //   </p>
-    
-  //   );
-    
-  //   };
-    
-    
-    
-  //   export default Todo;
