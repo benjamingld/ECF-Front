@@ -42,12 +42,13 @@ const ListContainer = () => {
                 Ajouter liste
             </button>
 
-            {lists.map((list, index) => (
+            {lists.map((list) => (
                 <List
-                    key={index}
+                    key={list.id}
                     title={list.title}
                     deleteList={deleteList}
                     id={list.id}
+
                 />
             ))}
         </>

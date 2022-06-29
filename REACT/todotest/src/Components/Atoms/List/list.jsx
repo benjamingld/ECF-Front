@@ -43,12 +43,12 @@ const List = ({ title, id, deleteList }) => {
                 Crée todo
             </button>
 
-            {todos.map((todo, index) => (
+            {todos.map((todo) => (
                 <Todo
-                    key={index}
+                    key={todo.id}
                     title={todo.title}
-                    id={todo.id}
                     deleteTodo={deleteTodo}
+                    id={todo.id}
                 />
             ))}
 
