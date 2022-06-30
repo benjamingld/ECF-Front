@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import Todo from '../Todo/todo'
+import { DivList, Button, Title } from '../../Style/style'
 
 const List = ({ title, id, deleteList }) => {
     const [value, setValue] = useState('')
@@ -27,39 +28,39 @@ const List = ({ title, id, deleteList }) => {
     }
 
     return (
-        <div style={{ border: '2px solid red', margin: 10 }}>
-            {title}
+        <DivList>
+            <Title>{title}</Title>
             <input
                 value={value}
                 placeholder="Créer une todo"
                 onChange={(e) => handleChange(e)}
             />
 
-            <button
+            <Button
                 onClick={() => {
                     handleClick()
                 }}
             >
-                Crée todo
-            </button>
+                Add todo
+            </Button>
 
             {todos.map((todo, index) => (
                 <Todo
-                    key={index}
+                    key={todo.id}
                     title={todo.title}
                     id={todo.id}
                     deleteTodo={deleteTodo}
                 />
             ))}
 
-            <button
+            <Button
                 onClick={() => {
                     deleteList(id)
                 }}
             >
-                Suppression Liste
-            </button>
-        </div>
+                Delete List
+            </Button>
+        </DivList>
     )
 }
 

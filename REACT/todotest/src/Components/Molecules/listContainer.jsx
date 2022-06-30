@@ -1,5 +1,6 @@
 import List from '../Atoms/List/list'
 import { useState } from 'react'
+import { ContainerList } from '../Style/style'
 
 const ListContainer = () => {
     const [value, setValue] = useState('')
@@ -27,7 +28,7 @@ const ListContainer = () => {
     }
 
     return (
-        <>
+        <div>
             <input
                 value={value}
                 placeholder="Créer la Liste"
@@ -39,18 +40,19 @@ const ListContainer = () => {
                     handleClick()
                 }}
             >
-                Ajouter liste
+                Add list
             </button>
-
+        <ContainerList>
             {lists.map((list, index) => (
                 <List
-                    key={index}
+                    key={list.id}
                     title={list.title}
                     deleteList={deleteList}
                     id={list.id}
                 />
             ))}
-        </>
+             </ContainerList>
+        </div>
     )
 }
 
