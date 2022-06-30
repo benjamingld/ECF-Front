@@ -44,12 +44,12 @@ const List = ({ title, id, deleteList }) => {
                 Add todo
             </Button>
 
-            {todos.map((todo, index) => (
+            {todos.map((todo) => (
                 <Todo
                     key={todo.id}
                     title={todo.title}
-                    id={todo.id}
                     deleteTodo={deleteTodo}
+                    id={todo.id}
                 />
             ))}
 
