@@ -3,7 +3,12 @@ import Todo from "./todo";
 
 const List = ({title, id, deleteList}) => {
 
-    const {value, todos, handleChange, handleClick} = useTodo();
+    const {value, todos, setTodos, handleChange, handleClick} = useTodo();
+
+    const deleteTodo = (todoID) => {
+        let filtered = todos.filter((del)=> del.id !== todoID)
+        setTodos(filtered)
+    }
 
     return (
 
@@ -23,6 +28,7 @@ const List = ({title, id, deleteList}) => {
                     key={todo.id}
                     title={todo.title}
                     id={todo.id}
+                    deleteTodo={deleteTodo}
                 />
                 
             ))}

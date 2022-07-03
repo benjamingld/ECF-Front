@@ -8,7 +8,6 @@ const ListContainer = () => {
     const deleteList = (listID) => {
         let filtered = lists.filter((del)=> del.id !== listID)
         setLists(filtered)
-
     }
 
     return (
