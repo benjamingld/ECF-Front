@@ -1,17 +1,28 @@
 import useTodoList from '../hooks/useTodoList'
 import List from '../components/List'
-import { DivTab, TitleTab, ListMap, ButtonValidate, Input,ButtonDelete } from '../style/style'
+import {
+    CardTab,
+    TitleTab,
+    ListMap,
+    ButtonValidate,
+    Input,
+    ButtonDelete,
+} from '../style/style'
 
+
+//passage de props title pour envoyer la value du TabListContainer
+//passage de props id et deleteListContainer pour recuperer la fonction  et l'utiliser sur le ButtonDelete
 const ListContainer = ({ title, id, deleteListContainer }) => {
     const { value, lists, setLists, handleChange, handleClick } = useTodoList()
 
+    //fonction de suppression des lists, le .filter et setLists(filtered) permet de filtrer les id de chaque liste, supprimer la liste avec l'id selectionner et de renvoyer le reste des listes.
     const deleteList = (listID) => {
         let filtered = lists.filter((del) => del.id !== listID)
         setLists(filtered)
     }
 
     return (
-        <DivTab>
+        <CardTab>
             <TitleTab>{title}</TitleTab>
             <Input
                 type="text"
@@ -20,8 +31,10 @@ const ListContainer = ({ title, id, deleteListContainer }) => {
                 onChange={(e) => handleChange(e)}
             />
 
-            <ButtonValidate onClick={() => handleClick()}>Ajouter Liste</ButtonValidate>
-            
+            <ButtonValidate onClick={() => handleClick()}>
+                Ajouter Liste
+            </ButtonValidate>
+
             <ListMap>
                 {lists.map((list) => (
                     <List
@@ -32,8 +45,10 @@ const ListContainer = ({ title, id, deleteListContainer }) => {
                     />
                 ))}
             </ListMap>
-            <ButtonDelete onClick={() => deleteListContainer(id)}>Delete TodoList</ButtonDelete>
-        </DivTab>
+            <ButtonDelete onClick={() => deleteListContainer(id)}>
+                Delete TodoList
+            </ButtonDelete>
+        </CardTab>
     )
 }
 
