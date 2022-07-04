@@ -55,6 +55,8 @@ export const Img = styled.img`
     height: 70px;
 `
 
-export const Footer = styled.div`
-    
+//style du footer
+export const Pfoot = styled.p`
+   align-self: flex-end;
+
 `

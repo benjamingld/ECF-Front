@@ -3,6 +3,7 @@ import TabListContainer from "../container/TabListContainer";
 import Home from "../container/Home";
 import Login from "../container/Login";
 import Navbar from '../components/Navbar';
+import PrivateRoute from './PrivateRoute';
 
  
 const Router = () => {
@@ -12,7 +13,9 @@ const Router = () => {
             <Navbar/>
             <Routes>
                 <Route path='/' element={<Home/>}></Route>
-                <Route path='/todolist' element={<TabListContainer/>}></Route>
+                <Route path='' element={<PrivateRoute/>}>
+                    <Route path='/todolist' element={<TabListContainer/>}></Route>
+                </Route>
                 <Route path='/login' element={<Login/>}></Route>
             </Routes>
         </BrowserRouter>
