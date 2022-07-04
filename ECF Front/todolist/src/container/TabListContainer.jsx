@@ -1,8 +1,11 @@
 import ListContainer from './ListContainer'
 import useTodoList from '../hooks/useTodoList'
+import { ButtonValidate, Input } from '../style/style'
+
 
  
 const TabListContainer = () => {
+
     const {
         value,
         listContainers,
@@ -20,14 +23,14 @@ const TabListContainer = () => {
 
     return (
         <div>
-            <input
+            <Input
                 type="text"
-                placeholder="Array"
+                placeholder="Nom de la todoList"
                 value={value}
                 onChange={(e) => handleChange(e)}
             />
 
-            <button onClick={() => handleClick()}>Add Tableau</button>
+            <ButtonValidate onClick={() => handleClick()}>Ajouter une todoList</ButtonValidate>
 
 
             {listContainers.map((listContainer) => (

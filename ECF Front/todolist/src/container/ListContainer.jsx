@@ -1,6 +1,6 @@
 import useTodoList from '../hooks/useTodoList'
 import List from '../components/List'
-import { DivTab, TitleTab, ListMap } from '../style/style'
+import { DivTab, TitleTab, ListMap, ButtonValidate, Input,ButtonDelete } from '../style/style'
 
 const ListContainer = ({ title, id, deleteListContainer }) => {
     const { value, lists, setLists, handleChange, handleClick } = useTodoList()
@@ -13,17 +13,15 @@ const ListContainer = ({ title, id, deleteListContainer }) => {
     return (
         <DivTab>
             <TitleTab>{title}</TitleTab>
-            <input
+            <Input
                 type="text"
                 placeholder="List"
                 value={value}
                 onChange={(e) => handleChange(e)}
             />
 
-            <button onClick={() => handleClick()}>Add list</button>
-            <button onClick={() => deleteListContainer(id)}>
-                Del listContainer
-            </button>
+            <ButtonValidate onClick={() => handleClick()}>Add list</ButtonValidate>
+            
             <ListMap>
                 {lists.map((list) => (
                     <List
@@ -34,6 +32,7 @@ const ListContainer = ({ title, id, deleteListContainer }) => {
                     />
                 ))}
             </ListMap>
+            <ButtonDelete onClick={() => deleteListContainer(id)}>Delete TodoList</ButtonDelete>
         </DivTab>
     )
 }

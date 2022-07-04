@@ -1,5 +1,5 @@
 import useTodoList from '../hooks/useTodoList'
-import { TitleList, DivList } from '../style/style'
+import { TitleList, DivList, ButtonValidate, Input, ButtonDelete } from '../style/style'
 import Todo from './Todo'
 
 const List = ({ title, id, deleteList }) => {
@@ -13,14 +13,14 @@ const List = ({ title, id, deleteList }) => {
     return (
         <DivList>
             <TitleList>{title}</TitleList>
-            <input
+            <Input
                 type="text"
                 placeholder="Todo"
                 value={value}
                 onChange={(e) => handleChange(e)}
             />
 
-            <button onClick={() => handleClick()}>Add Todo</button>
+            <ButtonValidate onClick={() => handleClick()}>Add Todo</ButtonValidate>
             
             {todos.map((todo) => (
                 <Todo
@@ -30,7 +30,7 @@ const List = ({ title, id, deleteList }) => {
                     id={todo.id}
                 />
             ))}
-            <button onClick={() => deleteList(id)}>Delete List</button>
+            <ButtonDelete onClick={() => deleteList(id)}>Delete List</ButtonDelete>
         </DivList>
     )
 }

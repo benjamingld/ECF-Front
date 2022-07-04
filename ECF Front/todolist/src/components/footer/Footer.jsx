@@ -3,11 +3,7 @@ import { Pfoot } from '../../style/style'
 const Footer = () => {
 
     return(
-            <>
-                <Pfoot>TodoList create by Benjamin</Pfoot>
-            </>
-            
-
+        <Pfoot>TodoList create by Benjamin</Pfoot>
     )
 
 }
