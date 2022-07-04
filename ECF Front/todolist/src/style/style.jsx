@@ -83,10 +83,18 @@ export const ButtonDelete = styled.button`
     border-radius: 30px;
     `
 
-
 //style du button check
 export const ButtonCheck = styled.button`
     margin: 5px 0 5px 0;
-    
+    `
 
+//style pour le formulaire de login
+export const Form = styled.div`
+    width: 50%;
+    margin: auto;
+    margin-top : 50px;
+    border: 2px solid black;
+    border-radius: 20px ;
+    padding: 20px;
+    
     `

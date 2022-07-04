@@ -2,7 +2,7 @@
 const Home = () => {
 
     return(
-        <p>Je suis la page d'accueil</p>
+        <p>Vous êtes actuellement sur la page d'accueil</p>
     )
 }
 

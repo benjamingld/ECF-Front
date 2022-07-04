@@ -20,7 +20,7 @@ const List = ({ title, id, deleteList }) => {
                 onChange={(e) => handleChange(e)}
             />
 
-            <ButtonValidate onClick={() => handleClick()}>Add Todo</ButtonValidate>
+            <ButtonValidate onClick={() => handleClick()}>Ajout</ButtonValidate>
             
             {todos.map((todo) => (
                 <Todo

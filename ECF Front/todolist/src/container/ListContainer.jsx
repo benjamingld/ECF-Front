@@ -15,12 +15,12 @@ const ListContainer = ({ title, id, deleteListContainer }) => {
             <TitleTab>{title}</TitleTab>
             <Input
                 type="text"
-                placeholder="List"
+                placeholder="Nom de la liste (facultatif)"
                 value={value}
                 onChange={(e) => handleChange(e)}
             />
 
-            <ButtonValidate onClick={() => handleClick()}>Add list</ButtonValidate>
+            <ButtonValidate onClick={() => handleClick()}>Ajouter Liste</ButtonValidate>
             
             <ListMap>
                 {lists.map((list) => (

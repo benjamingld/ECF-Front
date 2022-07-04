@@ -25,12 +25,12 @@ const TabListContainer = () => {
         <div>
             <Input
                 type="text"
-                placeholder="Nom de la todoList"
+                placeholder="Nom du tableau"
                 value={value}
                 onChange={(e) => handleChange(e)}
             />
 
-            <ButtonValidate onClick={() => handleClick()}>Ajouter une todoList</ButtonValidate>
+            <ButtonValidate onClick={() => handleClick()}>Ajouter un tableau</ButtonValidate>
 
 
             {listContainers.map((listContainer) => (
