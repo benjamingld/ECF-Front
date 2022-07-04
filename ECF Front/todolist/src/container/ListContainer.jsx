@@ -46,7 +46,7 @@ const ListContainer = ({ title, id, deleteListContainer }) => {
                 ))}
             </ListMap>
             <ButtonDelete onClick={() => deleteListContainer(id)}>
-                Delete TodoList
+                Supprimer Tableau
             </ButtonDelete>
         </CardTab>
     )
