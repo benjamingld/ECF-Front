@@ -20,7 +20,6 @@ const TabListContainer = () => {
 
     return (
         <div>
-            <h1>Ma TODOLIST</h1>
             <input
                 type="text"
                 placeholder="Array"

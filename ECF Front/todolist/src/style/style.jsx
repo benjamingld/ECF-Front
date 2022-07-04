@@ -39,3 +39,22 @@ export const TitleList = styled.h1`
     text-transform: uppercase;
     font-size: 15px;
 `
+
+//style de la NavBar
+export const NavBar = styled.div`
+    background-color: aliceblue;
+    padding: 10px;
+    font-size: 20px;
+    display: flex;
+    justify-content: space-around;
+`
+
+//style de l'image du header
+export const Img = styled.img`
+    border-radius: 50%;
+    height: 70px;
+`
+
+export const Footer = styled.div`
+    
+`
